@@ -1,0 +1,33 @@
+# Experimental runtime and third-party data
+/data/
+/models/
+/cache/
+**/objects365/
+**/images/
+**/deps/
+**/pydeps/
+**/runs/
+/.venv/
+
+# Python and local configuration
+__pycache__/
+*.py[cod]
+*.log
+*.part
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+.ssh/
+*.npz
+*.tar
+*.tar.gz
+*.safetensors
+*.bin
+*.pt
+!/runtime/risk_best.pt
+!/results/objects365-v2-20261113/self_best.pt
+!/results/objects365-v2-20261113/message_best.pt
+!/results/objects365-v2-20261113/gain_best.pt

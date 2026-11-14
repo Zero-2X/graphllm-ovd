@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.pt binary
+# Hash-locked snapshots retain the original bytes.
+experiments/** -text -whitespace
+results/objects365-v2-20261113/*.json -text -whitespace
+results/objects365-v2-20261113/result.csv -text -whitespace
+docs/design/2026-11-13-receiver-evidence-v2.md -text -whitespace

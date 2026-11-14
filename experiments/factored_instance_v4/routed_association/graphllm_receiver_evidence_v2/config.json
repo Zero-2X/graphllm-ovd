@@ -1,0 +1,85 @@
+{
+  "version": "graphllm_receiver_evidence_v2",
+  "design_sha256": "7f77628c5db26c9f145f4f2d4eb0a7faa78433fb8f01bab414c77c8a428438f7",
+  "seed": 42,
+  "classes": 365,
+  "dimensions": {
+    "hidden": 896,
+    "node": 768,
+    "local": 256,
+    "native": 5,
+    "edge": 12,
+    "grid": 3,
+    "message": 128,
+    "base_mlp": 256,
+    "relation_mlp": 128,
+    "gain": 147,
+    "gain_mlp": 32
+  },
+  "candidate": {
+    "max_edges": 2,
+    "base_score_min": 0.05,
+    "base_class_nms": 0.5,
+    "base_limit": 100,
+    "graph_nms": 0.82,
+    "graph_limit": 128,
+    "donor_min": 0.42,
+    "donor_clip": 0.17,
+    "donor_clip_gap": 0.045,
+    "edge_iou_max": 0.45,
+    "edge_cos_min": 0.45,
+    "receiver_clip": 0.15,
+    "receiver_clip_gap": 0.075,
+    "protect": 0.35,
+    "donor_duplicate_iou": 0.5
+  },
+  "local": {
+    "schema": "local9_predbox_stride16_v2",
+    "nominal_stride": 16,
+    "min_weight": 0.000001
+  },
+  "message": {
+    "js_affects_decision": false,
+    "js_temperature": 1
+  },
+  "normalizer": {
+    "floor": 0.01,
+    "clip": 6
+  },
+  "labels": {
+    "iou": 0.5,
+    "competing_iou": 0.3,
+    "crowd": 0.5
+  },
+  "training": {
+    "epochs": 12,
+    "patience": 3,
+    "adapter_lr": 0.0001,
+    "head_lr": 0.0003,
+    "weight_decay": 0.01,
+    "batch": 64,
+    "micro_batch": 8,
+    "clip": 1,
+    "warmup": 0.05,
+    "qualification": "training_qualification_v2"
+  },
+  "gain": {
+    "steps": 120,
+    "lr": 0.001,
+    "weight_decay": 0.05
+  },
+  "policy": {
+    "unknown_budget": 11
+  },
+  "evaluation": {
+    "holdout_count": 2048,
+    "arms": [
+      "native_D0",
+      "frozen_v1_js_on",
+      "v2_full",
+      "v2_message_off"
+    ]
+  },
+  "workers": 8,
+  "block": 32
+}

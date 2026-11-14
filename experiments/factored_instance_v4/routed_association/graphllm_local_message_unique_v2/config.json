@@ -1,0 +1,14 @@
+{
+  "version": "graphllm_local_message_unique_v2",
+  "seed": 42,
+  "classes": 365,
+  "message": {"bound": 2.0, "temperature": 1.0, "lambda": 1.0, "epsilon": 1e-8},
+  "semantic": {"epochs": 12, "patience": 3, "batch": 64, "micro_batch": 8, "adapter_lr": 0.0001, "head_lr": 0.0003, "weight_decay": 0.01, "warmup": 0.05, "grad_clip": 1.0},
+  "gain": {"steps": 120, "lr": 0.02, "weight_decay": 0.05, "grad_clip": 1.0},
+  "risk_cap": 0.220496,
+  "unknown_budget": 11,
+  "holdout_count": 2048,
+  "smoke_max": 16,
+  "arms": ["native", "legacy_locked", "new_full", "new_js_off"],
+  "convergence": {"plateau_relative": 0.025, "window": 5, "bootstrap": 2000, "tolerance_floor": 0.005}
+}
